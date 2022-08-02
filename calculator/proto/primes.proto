@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package prime;
+
+option go_package = "github.com/kkviks/grpc-messaging/calculator/proto";
+
+message PrimeRequest{
+  uint32 number = 1;
+}
+
+message PrimeResponse{
+  uint32 prime_factor = 1;
+}
+
+
+
+
+
+
+
