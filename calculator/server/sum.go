@@ -6,7 +6,7 @@ import (
 	"log"
 )
 
-func (s *SumServer) Sum(ctx context.Context, req *pb.SumRequest) (*pb.SumResponse, error) {
+func (s *CalculateServer) Sum(ctx context.Context, req *pb.SumRequest) (*pb.SumResponse, error) {
 	log.Printf("Value of request: %v", req)
 	values := req.GetValues()
 	sum := int32(0)
