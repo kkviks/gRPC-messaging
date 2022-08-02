@@ -22,8 +22,7 @@ func main() {
 		}
 	}(conn)
 
-	c := pb.NewSumServiceClient(conn)
+	c := pb.NewCalculatorServiceClient(conn)
 	doSum(c)
+	doPrimeFactors(c)
 }
-
-

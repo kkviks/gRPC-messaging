@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "primes.proto";
+
 package numbers;
 
 option go_package = "github.com/kkviks/grpc-messaging/calculator/proto";
@@ -12,6 +14,7 @@ message SumResponse{
   int32 result = 1;
 }
 
-service SumService{
+service CalculatorService{
   rpc Sum(SumRequest) returns (SumResponse);
+  rpc PrimeFactors(prime.PrimeRequest) returns (stream prime.PrimeResponse);
 }

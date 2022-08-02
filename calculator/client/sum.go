@@ -6,7 +6,7 @@ import (
 	"log"
 )
 
-func doSum(c pb.SumServiceClient) {
+func doSum(c pb.CalculatorServiceClient) {
 	log.Printf("doSum is called!")
 
 	ctx := context.Background()
