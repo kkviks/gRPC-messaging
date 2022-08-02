@@ -1,6 +1,7 @@
 package main
 
 import (
+	pb "github.com/kkviks/grpc-messaging/greet/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
@@ -12,7 +13,6 @@ func main() {
 	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("Failed to connect on %s\n", addr)
-		return
 	}
 
 	log.Printf("Connected to %s\n", addr)
@@ -25,4 +25,7 @@ func main() {
 		log.Println("Connection closed")
 	}(conn)
 
+	c := pb.NewGreetServiceClient(conn)
+
+	doGreet(c)
 }
