@@ -26,6 +26,5 @@ func main() {
 	}(conn)
 
 	c := pb.NewGreetServiceClient(conn)
-
 	doGreet(c)
 }
