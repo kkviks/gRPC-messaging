@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package numbers;
+
+option go_package = "github.com/kkviks/grpc-messaging/calculator/proto";
+
+message SumRequest{
+  repeated int32 values = 1;
+}
+
+message SumResponse{
+  int32 result = 1;
+}
+
+service SumService{
+  rpc Sum(SumRequest) returns (SumResponse);
+}
