@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package numbers;
+
+option go_package = "github.com/kkviks/grpc-messaging/calculator/proto";
+
+message MaxRequest{
+  int32 number = 1;
+}
+
+message MaxResponse{
+  int32 number = 1;
+}

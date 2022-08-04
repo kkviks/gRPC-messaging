@@ -1,6 +1,8 @@
 syntax = "proto3";
 
 import "primes.proto";
+import "avg.proto";
+import "max.proto";
 
 package numbers;
 
@@ -17,4 +19,6 @@ message SumResponse{
 service CalculatorService{
   rpc Sum(SumRequest) returns (SumResponse);
   rpc PrimeFactors(prime.PrimeRequest) returns (stream prime.PrimeResponse);
+  rpc Avg(stream AvgRequest) returns (AvgResponse);
+  rpc Max(stream MaxRequest) returns (stream MaxResponse);
 }
